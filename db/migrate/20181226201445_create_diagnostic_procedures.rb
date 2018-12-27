@@ -1,4 +1,4 @@
-class CreateDiagnosticProcedures < ActiveRecord::Migration
+class CreateDiagnosticProcedures < ActiveRecord::Migration[5.1]
   def change
     create_table :diagnostic_procedures do |t|
 

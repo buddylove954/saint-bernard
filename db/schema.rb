@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,74 +10,74 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181226201631) do
+ActiveRecord::Schema.define(version: 2018_12_26_201631) do
 
-  create_table "admissions", force: true do |t|
+  create_table "admissions", force: :cascade do |t|
     t.datetime "moment"
   end
 
-  create_table "allergies", force: true do |t|
-    t.text    "description"
+  create_table "allergies", force: :cascade do |t|
+    t.text "description"
     t.integer "patient_id"
   end
 
-  create_table "diagnoses", force: true do |t|
-    t.string  "coding_system"
-    t.string  "code"
-    t.text    "description"
+  create_table "diagnoses", force: :cascade do |t|
+    t.string "coding_system"
+    t.string "code"
+    t.text "description"
     t.integer "patient_id"
     t.integer "admission_id"
   end
 
-  create_table "diagnostic_procedures", force: true do |t|
-    t.text     "description"
+  create_table "diagnostic_procedures", force: :cascade do |t|
+    t.text "description"
     t.datetime "moment"
-    t.integer  "patient_id"
+    t.integer "patient_id"
   end
 
-  create_table "facilities", force: true do |t|
+  create_table "facilities", force: :cascade do |t|
     t.string "name"
   end
 
-  create_table "medication_orders", force: true do |t|
-    t.string  "name"
+  create_table "medication_orders", force: :cascade do |t|
+    t.string "name"
     t.integer "unit"
     t.decimal "dosage"
     t.integer "route"
     t.integer "order_frequency_id"
-    t.text    "necessity"
+    t.text "necessity"
     t.integer "patient_id"
   end
 
-  create_table "observations", force: true do |t|
-    t.text     "description"
+  create_table "observations", force: :cascade do |t|
+    t.text "description"
     t.datetime "moment"
-    t.integer  "admission_id"
-  end
-
-  create_table "order_frequencies", force: true do |t|
-    t.string  "value"
-    t.integer "unit"
-  end
-
-  create_table "patients", force: true do |t|
-    t.string   "first_name"
-    t.string   "middle_name"
-    t.string   "last_name"
-    t.string   "mr"
-    t.datetime "dob"
-    t.integer  "gender"
-    t.integer  "admission_id"
-  end
-
-  create_table "symptoms", force: true do |t|
-    t.text    "description"
     t.integer "admission_id"
   end
 
-  create_table "treatments", force: true do |t|
-    t.text    "description"
-    t.text    "necessity"
+  create_table "order_frequencies", force: :cascade do |t|
+    t.string "value"
+    t.integer "unit"
+  end
+
+  create_table "patients", force: :cascade do |t|
+    t.string "first_name"
+    t.string "middle_name"
+    t.string "last_name"
+    t.string "mr"
+    t.datetime "dob"
+    t.integer "gender"
+    t.integer "admission_id"
+  end
+
+  create_table "symptoms", force: :cascade do |t|
+    t.text "description"
+    t.integer "admission_id"
+  end
+
+  create_table "treatments", force: :cascade do |t|
+    t.text "description"
+    t.text "necessity"
     t.integer "patient_id"
   end
 

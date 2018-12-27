@@ -32,7 +32,7 @@ class PatientTest < ActiveSupport::TestCase
   end
 
   test "patients should be able to have an admission" do
-    @patient.admission = @admission
+    @patient.admission_id = @admission.id
     @patient.save
     assert_equal @patient.admission, @admission
   end

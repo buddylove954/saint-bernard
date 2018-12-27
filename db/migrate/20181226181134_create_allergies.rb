@@ -1,4 +1,4 @@
-class CreateAllergies < ActiveRecord::Migration
+class CreateAllergies < ActiveRecord::Migration[5.1]
   def change
     create_table :allergies do |t|
 

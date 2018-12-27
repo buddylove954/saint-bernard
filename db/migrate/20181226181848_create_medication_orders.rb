@@ -1,4 +1,4 @@
-class CreateMedicationOrders < ActiveRecord::Migration
+class CreateMedicationOrders < ActiveRecord::Migration[5.1]
   def change
     create_table :medication_orders do |t|
 
