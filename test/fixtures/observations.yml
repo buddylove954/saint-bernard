@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyText
+  moment: 2018-12-26 09:59:18
+
+two:
+  description: MyText
+  moment: 2018-12-26 09:59:18
