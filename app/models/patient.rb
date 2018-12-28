@@ -6,6 +6,6 @@ class Patient < ApplicationRecord
   has_many :diagnoses, class_name: 'Diagnosis'
   has_many :treatments
   has_many :diagnostic_procedures
-  belongs_to :admission
+  belongs_to :admission, optional: true
 
 end
