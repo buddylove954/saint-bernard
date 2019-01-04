@@ -1,0 +1,32 @@
+<div class="container container_body">
+	<div class="row">
+		<div class="col-lg name-col">
+			<h2>Patient Information</h2>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-3 name-col">
+			<h4>First Name</h4>
+			<h5><%= @patient.first_name %></h5>
+		</div>
+		<div class="col-sm-3 name-col">
+			<h4>Last Name</h4>
+			<h5><%= @patient.last_name %></h5>
+		</div>
+		<div class="col-sm-3 name-col">
+			<h4>Middle Name</h4>
+			<h5><%= @patient.middle_name %></h5>
+		</div>
+		<div class="col-sm-3 name-col">
+			<h4>Medical Record</h4>
+			<h5><%= @patient.mr %></h5>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg name-col">
+			<h3>Summary</h3>
+			<p><%= @patient.summary(@facility.name)%></p>
+		</div>
+	</div>
+</div>
