@@ -12,6 +12,8 @@ patient_data = {first_names: ["Tony", "Will", "Joe", "Mike", "Jake", "MasterYi",
 }
 allergies = [Allergy.create(description: "Peanuts"), Allergy.create(description: "Shell Fish"), Allergy.create(description: "Ice Cream"), Allergy.create(description: "Water")]
 admission = Admission.create(moment: DateTime.new(2012, 07, 11, 20, 10, 0))
+symptom = Symptom.create(description: "Upset Tummy")
+admission.symptoms << symptom
 Facility.create(name: "Broward General")
 medication_order = MedicationOrder.create(name: "Advil", unit: "mg", dosage: 10.00, route: "IM", necessity: "relieve pain")
 order_frequency = OrderFrequency.create(value: "1", unit: "hour")

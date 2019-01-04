@@ -52,4 +52,17 @@ class PatientTest < ActiveSupport::TestCase
   test "patients should have a list diagnostic_procedures" do
     assert_equal @patient.diagnostic_procedures, [@diagnostic_procedure]
   end
+
+  test "summary method returns a summary of all the patients encounters" do
+    @patient.admission_id = @admission.id
+    @patient.medications << @medication_order
+    @patient.allergies << @allergies
+    @patient.save
+    assert_equal @patient.summary("Broward General").include?("Broward General"), true
+    assert_equal @patient.summary("Broward General").include?("2012-07-11 at 20:10"), true
+    assert_equal @patient.summary("Broward General").include?("Upset Tummy"), true
+    assert_equal @patient.summary("Broward General").include?("Peanuts, Shell Fish, Ice Cream, and Water"), true
+    assert_equal @patient.summary("Broward General").include?("very bad"), true
+    assert_equal @patient.summary("Broward General").include?("Advil 10.0 1hour to very"), true
+  end
 end

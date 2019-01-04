@@ -11,7 +11,7 @@ class Patient < ApplicationRecord
   def summary(facility_name)
   	"This #{self.age} years old #{self.gender} was admitted to #{facility_name} on #{self.admission.date} at #{self.admission.time}
   	 due to #{self.admission.list_of_diagnoses_descriptions(self.id).to_sentence}. The observed symptoms on admission were 
-  	 #{self.admission.symptoms.to_sentence}. 
+  	 #{self.admission.symptoms.collect(&:description).to_sentence}.
 
   	 Upon asking about known allergies, the patient disclosed #{self.list_of_allergies}. Upon asking about the chronic conditions,
   	 the patient disclosed #{self.chronic_conditions.collect(&:description).to_sentence}. The patient was administered with #{self.list_of_medications}.

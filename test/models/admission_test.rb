@@ -16,7 +16,7 @@ class AdmissionTest < ActiveSupport::TestCase
 
   test "admission should be able to have a list of diagnosis" do
     @admission.diagnoses << @diagnoses
-    assert_equal @diagnoses, @admission.diagnosis.first
+    assert_equal @diagnoses, @admission.diagnoses.first
   end
 
   test "admission should be able to have a list of symptoms" do
