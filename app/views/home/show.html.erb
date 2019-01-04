@@ -29,4 +29,10 @@
 			<p><%= @patient.summary(@facility.name)%></p>
 		</div>
 	</div>
+
+  <div class="row">
+    <div class="col-lg">
+      <%= button_to "PRINT", '#', class: "btn-primary print-button", onclick: "printpage()", :method => "get" %>
+    </div>
+  </div>
 </div>

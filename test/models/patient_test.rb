@@ -14,7 +14,7 @@ class PatientTest < ActiveSupport::TestCase
     @medication_order = MedicationOrder.create(name: "Advil", unit: "mg", dosage: 10.00, route: "IM", necessity: "very")
     @order_frequency = OrderFrequency.create(value: "1", unit: "hour")
     @medication_order.order_frequency = @order_frequency
-    @admission.diagnosis << @diagnoses
+    @admission.diagnoses << @diagnoses
     @admission.symptoms << @symptom
     @admission.observations << @observation
   end
